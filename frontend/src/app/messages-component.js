@@ -69,7 +69,7 @@ var MessageComponent = (function () {
 MessageComponent = __decorate([
     core_1.Component({
         selector: 'messages',
-        template: "\n    <div *ngFor=\"let message of messages\">\n      <md-card style=\"margin: 8px;\">\n        <md-card-title>{{message.owner}}</md-card-title>\n        <md-card-content>{{message.text}}</md-card-content>\n      </md-card>\n    </div> "
+        template: "\n      <div *ngFor=\"let message of messages\">\n          <md-card class=\"card\">\n              <md-card-title>{{message.owner}}</md-card-title>\n              <md-card-content>{{message.text}}</md-card-content>\n          </md-card>\n      </div> \n  "
     }),
     __metadata("design:paramtypes", [web_service_1.WebService])
 ], MessageComponent);

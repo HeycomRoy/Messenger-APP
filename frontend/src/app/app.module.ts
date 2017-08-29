@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule} from '@angular/material';
 import { MessageComponent} from './messages-component';
 import { WebService} from './web.service';
+import { NewMessageComponent} from './new-message.component';
 
 
 import { AppComponent }  from './app.component';
 
 @NgModule({
   imports:      [ BrowserModule, MaterialModule ],
-  declarations: [ AppComponent, MessageComponent ],
+  declarations: [ AppComponent, MessageComponent, NewMessageComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ WebService ]
 })
