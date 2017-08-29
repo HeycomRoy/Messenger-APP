@@ -9,6 +9,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var material_1 = require("@angular/material");
 var messages_component_1 = require("./messages-component");
+var web_service_1 = require("./web.service");
 var app_component_1 = require("./app.component");
 var AppModule = (function () {
     function AppModule() {
@@ -19,7 +20,8 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, material_1.MaterialModule],
         declarations: [app_component_1.AppComponent, messages_component_1.MessageComponent],
-        bootstrap: [app_component_1.AppComponent]
+        bootstrap: [app_component_1.AppComponent],
+        providers: [web_service_1.WebService]
     })
 ], AppModule);
 exports.AppModule = AppModule;
