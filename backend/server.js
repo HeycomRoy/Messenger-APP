@@ -22,7 +22,7 @@ api.post('/messages', function(req, res){
     // console.log(req.body);
     messages.push(req.body);
     //get response back (postman never gets response back its hanging for response)
-    res.sendStatus(200);
+    res.json(req.body);
 })
 
 app.use('/api', api);

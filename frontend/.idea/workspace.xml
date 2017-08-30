@@ -17,12 +17,12 @@
       <file leaf-file-name="messages-component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/messages-component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="315">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
-                <marker date="1504081076000" expanded="true" signature="181:377" ph="..." />
-                <marker date="1504081076000" expanded="true" signature="214:364" ph="..." />
+                <marker date="1504100205000" expanded="true" signature="192:388" ph="..." />
+                <marker date="1504100205000" expanded="true" signature="225:375" ph="..." />
               </folding>
             </state>
           </provider>
@@ -31,8 +31,8 @@
       <file leaf-file-name="web.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/web.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="330">
+              <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -40,18 +40,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new-message.component.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="new-message.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/new-message.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="37" column="37" lean-forward="false" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+            <state relative-caret-position="417">
+              <caret line="38" column="76" lean-forward="false" selection-start-line="38" selection-start-column="76" selection-end-line="38" selection-end-column="76" />
               <folding>
-                <element signature="e#0#64#0" expanded="true" />
-                <marker date="1504086016000" expanded="true" signature="191:825" ph="..." />
-                <marker date="1504086016000" expanded="true" signature="219:808" ph="..." />
-                <marker date="1504086016000" expanded="true" signature="254:463" ph="..." />
-                <marker date="1504086016000" expanded="true" signature="498:631" ph="..." />
-                <marker date="1504086016000" expanded="true" signature="663:779" ph="..." />
+                <element signature="e#105#147#0" expanded="true" />
+                <marker date="1504099844000" expanded="true" signature="274:908" ph="..." />
+                <marker date="1504099844000" expanded="true" signature="302:891" ph="..." />
+                <marker date="1504099844000" expanded="true" signature="337:546" ph="..." />
+                <marker date="1504099844000" expanded="true" signature="581:714" ph="..." />
+                <marker date="1504099844000" expanded="true" signature="746:862" ph="..." />
               </folding>
             </state>
           </provider>
@@ -67,13 +67,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="41" lean-forward="false" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+            <state relative-caret-position="270">
+              <caret line="18" column="101" lean-forward="false" selection-start-line="18" selection-start-column="101" selection-end-line="18" selection-end-column="101" />
               <folding>
-                <element signature="e#0#53#0" expanded="true" />
+                <element signature="e#98#140#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,11 +100,11 @@
         <option value="$PROJECT_DIR$/src/systemjs.config.js" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/styles.css" />
-        <option value="$PROJECT_DIR$/src/app/messages-component.ts" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/app/web.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/new-message.component.ts" />
         <option value="$PROJECT_DIR$/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/new-message.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/messages-component.ts" />
       </list>
     </option>
   </component>
@@ -195,18 +195,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1503905430457</updated>
-      <workItem from="1503905432173" duration="13884000" />
+      <workItem from="1503905432173" duration="15310000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13884000" />
+    <option name="totallyTimeSpent" value="15310000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.308" sideWeight="0.503125" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -314,47 +315,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/messages-component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
-            <marker date="1504081076000" expanded="true" signature="181:377" ph="..." />
-            <marker date="1504081076000" expanded="true" signature="214:364" ph="..." />
+            <marker date="1504100205000" expanded="true" signature="192:388" ph="..." />
+            <marker date="1504100205000" expanded="true" signature="225:375" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/web.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/new-message.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="37" column="37" lean-forward="false" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+        <state relative-caret-position="270">
+          <caret line="18" column="101" lean-forward="false" selection-start-line="18" selection-start-column="101" selection-end-line="18" selection-end-column="101" />
           <folding>
-            <element signature="e#0#64#0" expanded="true" />
-            <marker date="1504086016000" expanded="true" signature="191:825" ph="..." />
-            <marker date="1504086016000" expanded="true" signature="219:808" ph="..." />
-            <marker date="1504086016000" expanded="true" signature="254:463" ph="..." />
-            <marker date="1504086016000" expanded="true" signature="498:631" ph="..." />
-            <marker date="1504086016000" expanded="true" signature="663:779" ph="..." />
+            <element signature="e#98#140#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/new-message.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="41" lean-forward="false" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+        <state relative-caret-position="417">
+          <caret line="38" column="76" lean-forward="false" selection-start-line="38" selection-start-column="76" selection-end-line="38" selection-end-column="76" />
           <folding>
-            <element signature="e#0#53#0" expanded="true" />
+            <element signature="e#105#147#0" expanded="true" />
+            <marker date="1504099844000" expanded="true" signature="274:908" ph="..." />
+            <marker date="1504099844000" expanded="true" signature="302:891" ph="..." />
+            <marker date="1504099844000" expanded="true" signature="337:546" ph="..." />
+            <marker date="1504099844000" expanded="true" signature="581:714" ph="..." />
+            <marker date="1504099844000" expanded="true" signature="746:862" ph="..." />
           </folding>
         </state>
       </provider>

@@ -8,12 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+// import { Component, Output, EventEmitter } from '@angular/core';     //******* with out the viewChild
 var core_1 = require("@angular/core");
 var web_service_1 = require("./web.service");
 var NewMessageComponent = (function () {
+    // @Output() onPosted = new EventEmitter();    //******* with out the viewChild
     function NewMessageComponent(webService) {
         this.webService = webService;
-        this.onPosted = new core_1.EventEmitter();
         this.message = {
             owner: "",
             text: ""
@@ -22,14 +23,10 @@ var NewMessageComponent = (function () {
     NewMessageComponent.prototype.post = function () {
         // console.log(this.message);
         this.webService.postMessage(this.message);
-        this.onPosted.emit(this.message);
+        // this.onPosted.emit(this.message);    //******* with out the viewChild
     };
     return NewMessageComponent;
 }());
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], NewMessageComponent.prototype, "onPosted", void 0);
 NewMessageComponent = __decorate([
     core_1.Component({
         selector: 'new-message',

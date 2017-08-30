@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+// import { Component, Output, EventEmitter } from '@angular/core';     //******* with out the viewChild
+import { Component } from '@angular/core';
 import { WebService } from './web.service';
 
 @Component({
@@ -23,7 +24,7 @@ import { WebService } from './web.service';
 
 export class NewMessageComponent {
 
-  @Output() onPosted = new EventEmitter();
+  // @Output() onPosted = new EventEmitter();    //******* with out the viewChild
 
   constructor(private webService: WebService) {}
 
@@ -35,7 +36,7 @@ export class NewMessageComponent {
   post() {
     // console.log(this.message);
     this.webService.postMessage(this.message);
-    this.onPosted.emit(this.message);
+    // this.onPosted.emit(this.message);    //******* with out the viewChild
   }
 
 }
