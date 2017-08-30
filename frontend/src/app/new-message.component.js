@@ -13,13 +13,27 @@ var web_service_1 = require("./web.service");
 var NewMessageComponent = (function () {
     function NewMessageComponent(webService) {
         this.webService = webService;
+        this.onPosted = new core_1.EventEmitter();
+        this.message = {
+            owner: "",
+            text: ""
+        };
     }
+    NewMessageComponent.prototype.post = function () {
+        // console.log(this.message);
+        this.webService.postMessage(this.message);
+        this.onPosted.emit(this.message);
+    };
     return NewMessageComponent;
 }());
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], NewMessageComponent.prototype, "onPosted", void 0);
 NewMessageComponent = __decorate([
     core_1.Component({
         selector: 'new-message',
-        template: "\n      <md-card class=\"card\">\n          <md-card-content>\n              <md-input-container>\n                  <input mdInput placeholder=\"Name\"/>\n              </md-input-container>\n              <md-input-container>\n                  <textarea mdInput placeholder=\"Message\"></textarea>\n              </md-input-container>\n              <md-card-actions>\n                  <button md-button color=\"primary\">POST</button>\n              </md-card-actions>\n          </md-card-content>\n      </md-card>\n  "
+        template: "\n      <md-card class=\"card\">\n          <md-card-content>\n              <md-input-container>\n                  <!--two way bundling [(ngModel)] also need to import in app.module.ts-->\n                  <input [(ngModel)]=\"message.owner\" mdInput placeholder=\"Name\"/>\n              </md-input-container>\n              <md-input-container>\n                  <textarea [(ngModel)]=\"message.text\" mdInput placeholder=\"Message\"></textarea>\n              </md-input-container>\n              <md-card-actions>\n                  <button (click)=\"post()\" md-button color=\"primary\">POST</button>\n              </md-card-actions>\n          </md-card-content>\n      </md-card>\n  "
     }),
     __metadata("design:paramtypes", [web_service_1.WebService])
 ], NewMessageComponent);

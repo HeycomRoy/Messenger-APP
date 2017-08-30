@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { WebService} from './web.service';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { WebService } from './web.service';
 
 @Component({
   selector: 'new-message',
@@ -7,13 +7,14 @@ import { WebService} from './web.service';
       <md-card class="card">
           <md-card-content>
               <md-input-container>
-                  <input mdInput placeholder="Name"/>
+                  <!--two way bundling [(ngModel)] also need to import in app.module.ts-->
+                  <input [(ngModel)]="message.owner" mdInput placeholder="Name"/>
               </md-input-container>
               <md-input-container>
-                  <textarea mdInput placeholder="Message"></textarea>
+                  <textarea [(ngModel)]="message.text" mdInput placeholder="Message"></textarea>
               </md-input-container>
               <md-card-actions>
-                  <button md-button color="primary">POST</button>
+                  <button (click)="post()" md-button color="primary">POST</button>
               </md-card-actions>
           </md-card-content>
       </md-card>
@@ -22,7 +23,19 @@ import { WebService} from './web.service';
 
 export class NewMessageComponent {
 
+  @Output() onPosted = new EventEmitter();
+
   constructor(private webService: WebService) {}
 
+  message = {
+    owner: "",
+    text: ""
+  }
+
+  post() {
+    // console.log(this.message);
+    this.webService.postMessage(this.message);
+    this.onPosted.emit(this.message);
+  }
 
 }

@@ -6,10 +6,10 @@ var messages = [{text: 'text one(backend)', owner: 'Tim'}, {text: 'text two(back
 
 app.use(bodyParser.json());
 
-app.use((req, res, next) => {
+app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
-res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Cotent-Type, Accept");
-next();
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 })
 
 var api = express.Router();

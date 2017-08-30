@@ -14,9 +14,13 @@ var core_1 = require("@angular/core");
 var WebService = (function () {
     function WebService(http) {
         this.http = http;
+        this.BASE_URL = 'http://localhost:8080/api';
     }
     WebService.prototype.getMessages = function () {
-        return this.http.get('http://localhost:8080/api/messages').toPromise();
+        return this.http.get(this.BASE_URL + '/messages').toPromise();
+    };
+    WebService.prototype.postMessage = function (message) {
+        return this.http.post(this.BASE_URL + '/messages', message).toPromise();
     };
     return WebService;
 }());

@@ -20,7 +20,7 @@ export class MessageComponent {
   constructor(private webService: WebService) {}
 
   async ngOnInit() {
-    var response = await this.webService.getMessages();
+    let response = await this.webService.getMessages();
     this.messages = response.json();
   }
 }
