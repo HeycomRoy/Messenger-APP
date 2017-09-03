@@ -8,10 +8,11 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent }  from './app.component';
+import { NavComponent } from './nav.component';
 
 @NgModule({
   imports:      [ BrowserModule, MaterialModule, FormsModule, BrowserAnimationsModule],
-  declarations: [ AppComponent, MessageComponent, NewMessageComponent ],
+  declarations: [ AppComponent, MessageComponent, NewMessageComponent, NavComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ WebService ]
 })

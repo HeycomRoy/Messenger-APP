@@ -2,11 +2,12 @@
 import { Component } from '@angular/core';
 import { MessageComponent} from './messages-component';
 import { NewMessageComponent} from './new-message.component';
+import { NavComponent} from './nav.component';
 
 @Component({
   selector: 'my-app',
   template: `
-    <h1>Message APP</h1> 
+    <nav></nav>
     <!--<new-message (onPosted)="onPosted($event)"></new-message>--> <!--without viewChild-->
     <new-message></new-message>
     <messages></messages>

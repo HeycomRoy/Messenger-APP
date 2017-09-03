@@ -14,6 +14,7 @@ var new_message_component_1 = require("./new-message.component");
 var forms_1 = require("@angular/forms");
 var animations_1 = require("@angular/platform-browser/animations");
 var app_component_1 = require("./app.component");
+var nav_component_1 = require("./nav.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,7 +23,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, material_1.MaterialModule, forms_1.FormsModule, animations_1.BrowserAnimationsModule],
-        declarations: [app_component_1.AppComponent, messages_component_1.MessageComponent, new_message_component_1.NewMessageComponent],
+        declarations: [app_component_1.AppComponent, messages_component_1.MessageComponent, new_message_component_1.NewMessageComponent, nav_component_1.NavComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [web_service_1.WebService]
     })

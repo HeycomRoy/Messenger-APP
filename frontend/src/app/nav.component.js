@@ -5,18 +5,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-// import { Component, ViewChild } from '@angular/core';    //******this without using view child
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var NavComponent = (function () {
+    function NavComponent() {
     }
-    return AppComponent;
+    return NavComponent;
 }());
-AppComponent = __decorate([
+NavComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "\n    <nav></nav>\n    <!--<new-message (onPosted)=\"onPosted($event)\"></new-message>--> <!--without viewChild-->\n    <new-message></new-message>\n    <messages></messages>\n  ",
-    })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+        selector: 'nav',
+        template: "\n      <md-toolbar color=\"primary\">\n          Message APP\n      </md-toolbar>\n  "
+    }),
+    __metadata("design:paramtypes", [])
+], NavComponent);
+exports.NavComponent = NavComponent;
+//# sourceMappingURL=nav.component.js.map

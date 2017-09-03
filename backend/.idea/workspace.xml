@@ -123,12 +123,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1503971211280</updated>
-      <workItem from="1503971212894" duration="8140000" />
+      <workItem from="1503971212894" duration="8147000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8140000" />
+    <option name="totallyTimeSpent" value="8147000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
@@ -161,6 +161,8 @@
         <option value="$PROJECT_DIR$/../frontend/src/app/web.service.js.map" />
         <option value="$PROJECT_DIR$/../frontend/src/app/new-message.component.js.map" />
         <option value="$PROJECT_DIR$/../frontend/src/app/new-message.component.js" />
+        <option value="$PROJECT_DIR$/../frontend/src/app/nav.component.js.map" />
+        <option value="$PROJECT_DIR$/../frontend/src/app/nav.component.js" />
       </list>
     </option>
   </component>
