@@ -46,46 +46,67 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
 var core_1 = require("@angular/core");
+var material_1 = require("@angular/material");
 var WebService = (function () {
-    function WebService(http) {
+    function WebService(http, sb) {
         this.http = http;
-        this.BASE_URL = 'http://localhost:8080/api';
+        this.sb = sb;
+        this.BASE_URL = 'http://localhost:8180/api';
         this.messages = [];
         this.getMessages();
     }
     WebService.prototype.getMessages = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var response;
+            var response, error_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.http.get(this.BASE_URL + '/messages').toPromise()];
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.http.get(this.BASE_URL + '/messages').toPromise()];
                     case 1:
                         response = _a.sent();
                         this.messages = response.json();
-                        return [2 /*return*/];
+                        return [3 /*break*/, 3];
+                    case 2:
+                        error_1 = _a.sent();
+                        this.handleError('Unable to get messages!!');
+                        return [3 /*break*/, 3];
+                    case 3: return [2 /*return*/];
                 }
             });
         });
     };
     WebService.prototype.postMessage = function (message) {
         return __awaiter(this, void 0, void 0, function () {
-            var response;
+            var response, error_2;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.http.post(this.BASE_URL + '/messages', message).toPromise()];
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.http.post(this.BASE_URL + '/messages', message).toPromise()];
                     case 1:
                         response = _a.sent();
                         this.messages.push(response.json());
-                        return [2 /*return*/];
+                        return [3 /*break*/, 3];
+                    case 2:
+                        error_2 = _a.sent();
+                        this.handleError('Unable to post a new message!!');
+                        return [3 /*break*/, 3];
+                    case 3: return [2 /*return*/];
                 }
             });
         });
+    };
+    //error handling function
+    WebService.prototype.handleError = function (error) {
+        console.log(error);
+        this.sb.open(error, 'close', { duration: 4000 });
     };
     return WebService;
 }());
 WebService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
+    __metadata("design:paramtypes", [http_1.Http, material_1.MdSnackBar])
 ], WebService);
 exports.WebService = WebService;
 //# sourceMappingURL=web.service.js.map

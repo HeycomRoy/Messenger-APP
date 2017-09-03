@@ -5,11 +5,12 @@ import { MessageComponent } from './messages-component';
 import { WebService } from './web.service';
 import { NewMessageComponent } from './new-message.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent }  from './app.component';
 
 @NgModule({
-  imports:      [ BrowserModule, MaterialModule, FormsModule ],
+  imports:      [ BrowserModule, MaterialModule, FormsModule, BrowserAnimationsModule],
   declarations: [ AppComponent, MessageComponent, NewMessageComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ WebService ]
