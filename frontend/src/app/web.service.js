@@ -45,6 +45,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
+var Rx_1 = require("rxjs/Rx");
 var core_1 = require("@angular/core");
 var material_1 = require("@angular/material");
 var WebService = (function () {
@@ -52,33 +53,24 @@ var WebService = (function () {
         this.http = http;
         this.sb = sb;
         this.BASE_URL = 'http://localhost:8180/api';
-        this.messages = [];
+        this.messageStore = [];
+        this.messageSubject = new Rx_1.Subject();
+        this.messages = this.messageSubject.asObservable();
         this.getMessages();
     }
-    WebService.prototype.getMessages = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var response, error_1;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.http.get(this.BASE_URL + '/messages').toPromise()];
-                    case 1:
-                        response = _a.sent();
-                        this.messages = response.json();
-                        return [3 /*break*/, 3];
-                    case 2:
-                        error_1 = _a.sent();
-                        this.handleError('Unable to get messages!!');
-                        return [3 /*break*/, 3];
-                    case 3: return [2 /*return*/];
-                }
-            });
+    WebService.prototype.getMessages = function (user) {
+        var _this = this;
+        user = (user) ? '/' + user : '';
+        this.http.get(this.BASE_URL + '/messages' + user).subscribe(function (response) {
+            _this.messageStore = response.json();
+            _this.messageSubject.next(_this.messageStore);
+        }, function (error) {
+            _this.handleError('Unable to get messages!!');
         });
     };
     WebService.prototype.postMessage = function (message) {
         return __awaiter(this, void 0, void 0, function () {
-            var response, error_2;
+            var response, error_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -86,10 +78,11 @@ var WebService = (function () {
                         return [4 /*yield*/, this.http.post(this.BASE_URL + '/messages', message).toPromise()];
                     case 1:
                         response = _a.sent();
-                        this.messages.push(response.json());
+                        this.messageStore.push(response.json());
+                        this.messageSubject.next(this.messageStore);
                         return [3 /*break*/, 3];
                     case 2:
-                        error_2 = _a.sent();
+                        error_1 = _a.sent();
                         this.handleError('Unable to post a new message!!');
                         return [3 /*break*/, 3];
                     case 3: return [2 /*return*/];

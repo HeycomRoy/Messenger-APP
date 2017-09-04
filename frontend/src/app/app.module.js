@@ -25,6 +25,10 @@ var routes = [
     {
         path: 'messages',
         component: messages_component_1.MessagesComponent
+    },
+    {
+        path: 'messages/:name',
+        component: messages_component_1.MessagesComponent
     }
 ];
 var AppModule = (function () {

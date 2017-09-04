@@ -10,18 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var web_service_1 = require("./web.service");
+var router_1 = require("@angular/router");
 var MessagesComponent = (function () {
-    function MessagesComponent(webService) {
+    function MessagesComponent(webService, route) {
         this.webService = webService;
+        this.route = route;
     }
+    MessagesComponent.prototype.ngOnInit = function () {
+        var name = this.route.snapshot.params.name;
+        this.webService.getMessages(name);
+    };
     return MessagesComponent;
 }());
 MessagesComponent = __decorate([
     core_1.Component({
         selector: 'messages',
-        template: "\n      <div *ngFor=\"let message of webService.messages\">\n          <md-card class=\"card\">\n              <md-card-title>{{message.owner}}</md-card-title>\n              <md-card-content>{{message.text}}</md-card-content>\n          </md-card>\n      </div> \n  "
+        template: "\n      <div *ngFor=\"let message of webService.messages | async\">\n          <md-card class=\"card\">\n              <md-card-title [routerLink]=\"['/messages', message.owner]\" style=\"cursor: pointer;\">{{message.owner}}</md-card-title>\n              <md-card-content>{{message.text}}</md-card-content>\n          </md-card>\n      </div> \n  "
     }),
-    __metadata("design:paramtypes", [web_service_1.WebService])
+    __metadata("design:paramtypes", [web_service_1.WebService, router_1.ActivatedRoute])
 ], MessagesComponent);
 exports.MessagesComponent = MessagesComponent;
 //# sourceMappingURL=messages-component.js.map
