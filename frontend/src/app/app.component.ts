@@ -1,7 +1,5 @@
 // import { Component, ViewChild } from '@angular/core';    //******this without using view child
 import { Component } from '@angular/core';
-import { MessageComponent} from './messages-component';
-import { NewMessageComponent} from './new-message.component';
 import { NavComponent} from './nav.component';
 
 @Component({
@@ -9,8 +7,7 @@ import { NavComponent} from './nav.component';
   template: `
     <nav></nav>
     <!--<new-message (onPosted)="onPosted($event)"></new-message>--> <!--without viewChild-->
-    <new-message></new-message>
-    <messages></messages>
+    <router-outlet></router-outlet>
   `,
 })
 export class AppComponent  {

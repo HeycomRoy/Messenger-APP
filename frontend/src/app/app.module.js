@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var platform_browser_1 = require("@angular/platform-browser");
 var material_1 = require("@angular/material");
 var messages_component_1 = require("./messages-component");
@@ -15,6 +16,17 @@ var forms_1 = require("@angular/forms");
 var animations_1 = require("@angular/platform-browser/animations");
 var app_component_1 = require("./app.component");
 var nav_component_1 = require("./nav.component");
+var home_component_1 = require("./home.component");
+var routes = [
+    {
+        path: '',
+        component: home_component_1.HomeComponent
+    },
+    {
+        path: 'messages',
+        component: messages_component_1.MessagesComponent
+    }
+];
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,8 +34,8 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, material_1.MaterialModule, forms_1.FormsModule, animations_1.BrowserAnimationsModule],
-        declarations: [app_component_1.AppComponent, messages_component_1.MessageComponent, new_message_component_1.NewMessageComponent, nav_component_1.NavComponent],
+        imports: [platform_browser_1.BrowserModule, material_1.MaterialModule, forms_1.FormsModule, animations_1.BrowserAnimationsModule, router_1.RouterModule.forRoot(routes)],
+        declarations: [app_component_1.AppComponent, messages_component_1.MessagesComponent, new_message_component_1.NewMessageComponent, nav_component_1.NavComponent, home_component_1.HomeComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [web_service_1.WebService]
     })

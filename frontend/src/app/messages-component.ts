@@ -13,7 +13,7 @@ import { WebService} from './web.service';
   `
 })
 
-export class MessageComponent {
+export class MessagesComponent {
 
   constructor(private webService: WebService) {}
 

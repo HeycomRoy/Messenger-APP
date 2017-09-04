@@ -10,18 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var web_service_1 = require("./web.service");
-var MessageComponent = (function () {
-    function MessageComponent(webService) {
+var MessagesComponent = (function () {
+    function MessagesComponent(webService) {
         this.webService = webService;
     }
-    return MessageComponent;
+    return MessagesComponent;
 }());
-MessageComponent = __decorate([
+MessagesComponent = __decorate([
     core_1.Component({
         selector: 'messages',
         template: "\n      <div *ngFor=\"let message of webService.messages\">\n          <md-card class=\"card\">\n              <md-card-title>{{message.owner}}</md-card-title>\n              <md-card-content>{{message.text}}</md-card-content>\n          </md-card>\n      </div> \n  "
     }),
     __metadata("design:paramtypes", [web_service_1.WebService])
-], MessageComponent);
-exports.MessageComponent = MessageComponent;
+], MessagesComponent);
+exports.MessagesComponent = MessagesComponent;
 //# sourceMappingURL=messages-component.js.map

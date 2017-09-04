@@ -17,7 +17,7 @@ var NavComponent = (function () {
 NavComponent = __decorate([
     core_1.Component({
         selector: 'nav',
-        template: "\n      <md-toolbar color=\"primary\">\n          Message APP\n      </md-toolbar>\n  "
+        template: "\n      <md-toolbar color=\"primary\">\n        <button md-button routerLink=\"/\">Message APP</button>\n        <button md-button routerLink=\"/messages\">Messages</button>\n      </md-toolbar>\n  "
     }),
     __metadata("design:paramtypes", [])
 ], NavComponent);

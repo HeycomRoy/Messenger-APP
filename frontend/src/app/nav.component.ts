@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
   selector: 'nav',
   template: `
       <md-toolbar color="primary">
-          Message APP
+        <button md-button routerLink="/">Message APP</button>
+        <button md-button routerLink="/messages">Messages</button>
       </md-toolbar>
   `
 })
