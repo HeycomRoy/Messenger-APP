@@ -17,6 +17,7 @@ var animations_1 = require("@angular/platform-browser/animations");
 var app_component_1 = require("./app.component");
 var nav_component_1 = require("./nav.component");
 var home_component_1 = require("./home.component");
+var register_component_1 = require("./register.component");
 var routes = [
     {
         path: '',
@@ -29,6 +30,10 @@ var routes = [
     {
         path: 'messages/:name',
         component: messages_component_1.MessagesComponent
+    },
+    {
+        path: 'register',
+        component: register_component_1.RegisterComponent
     }
 ];
 var AppModule = (function () {
@@ -39,7 +44,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, material_1.MaterialModule, forms_1.FormsModule, animations_1.BrowserAnimationsModule, router_1.RouterModule.forRoot(routes)],
-        declarations: [app_component_1.AppComponent, messages_component_1.MessagesComponent, new_message_component_1.NewMessageComponent, nav_component_1.NavComponent, home_component_1.HomeComponent],
+        declarations: [app_component_1.AppComponent, messages_component_1.MessagesComponent, new_message_component_1.NewMessageComponent, nav_component_1.NavComponent, home_component_1.HomeComponent, register_component_1.RegisterComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [web_service_1.WebService]
     })
