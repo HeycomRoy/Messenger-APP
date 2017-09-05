@@ -5,7 +5,7 @@ import { MaterialModule } from '@angular/material';
 import { MessagesComponent } from './messages-component';
 import { WebService } from './web.service';
 import { NewMessageComponent } from './new-message.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent }  from './app.component';
@@ -33,7 +33,7 @@ var routes = [
 ];
 
 @NgModule({
-  imports:      [ BrowserModule, MaterialModule, FormsModule, BrowserAnimationsModule, RouterModule.forRoot(routes) ],
+  imports:      [ BrowserModule, MaterialModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, RouterModule.forRoot(routes) ],
   declarations: [ AppComponent, MessagesComponent, NewMessageComponent, NavComponent, HomeComponent, RegisterComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ WebService ]

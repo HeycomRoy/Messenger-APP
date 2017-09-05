@@ -43,7 +43,7 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, material_1.MaterialModule, forms_1.FormsModule, animations_1.BrowserAnimationsModule, router_1.RouterModule.forRoot(routes)],
+        imports: [platform_browser_1.BrowserModule, material_1.MaterialModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, animations_1.BrowserAnimationsModule, router_1.RouterModule.forRoot(routes)],
         declarations: [app_component_1.AppComponent, messages_component_1.MessagesComponent, new_message_component_1.NewMessageComponent, nav_component_1.NavComponent, home_component_1.HomeComponent, register_component_1.RegisterComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [web_service_1.WebService]
