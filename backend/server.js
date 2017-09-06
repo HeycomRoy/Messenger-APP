@@ -47,7 +47,7 @@ auth.post('/register', function(req, res) {
     //TODO second parameter should be secret (will be provided in config for safe purpose) NOT HARDY CODED
     var token = jwt.sign(user.id, '123');
 
-    res.json(token);
+    res.json({firstName: user.firstName, token});
 })
 
 app.use('/api', api);
