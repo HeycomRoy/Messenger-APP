@@ -9,17 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var NavComponent = (function () {
-    function NavComponent() {
+var http_1 = require("@angular/http");
+var AuthService = (function () {
+    function AuthService(http) {
+        this.http = http;
+        this.BASE_URL = 'http://localhost:8180/auth';
     }
-    return NavComponent;
+    AuthService.prototype.register = function (user) {
+        delete user.confirmPassword;
+        this.http.post(this.BASE_URL + '/register', user).subscribe();
+    };
+    return AuthService;
 }());
-NavComponent = __decorate([
-    core_1.Component({
-        selector: 'nav',
-        template: "\n      <md-toolbar color=\"primary\">\n        <button md-button routerLink=\"/\">Message APP</button>\n        <button md-button routerLink=\"/messages\">Messages</button>\n        <button md-button routerLink=\"/register\">Register</button>\n      </md-toolbar>\n  "
-    }),
-    __metadata("design:paramtypes", [])
-], NavComponent);
-exports.NavComponent = NavComponent;
-//# sourceMappingURL=nav.component.js.map
+AuthService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], AuthService);
+exports.AuthService = AuthService;
+//# sourceMappingURL=auth.service.js.map

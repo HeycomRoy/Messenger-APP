@@ -10,9 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
+var auth_service_1 = require("./auth.service");
 var RegisterComponent = (function () {
-    function RegisterComponent(fb) {
+    function RegisterComponent(fb, auth) {
         this.fb = fb;
+        this.auth = auth;
         this.form = fb.group({
             firstName: ['', forms_1.Validators.required],
             lastName: ['', forms_1.Validators.required],
@@ -23,6 +25,7 @@ var RegisterComponent = (function () {
     }
     RegisterComponent.prototype.onSubmit = function () {
         console.log(this.form.errors);
+        this.auth.register(this.form.value);
     };
     //validate the register form
     RegisterComponent.prototype.isValid = function (control) {
@@ -37,7 +40,7 @@ RegisterComponent = __decorate([
         templateUrl: 'register.component.html',
         styles: ["\n      .error{\n        background-color: #fff0f0;\n      }\n  "]
     }),
-    __metadata("design:paramtypes", [forms_1.FormBuilder])
+    __metadata("design:paramtypes", [forms_1.FormBuilder, auth_service_1.AuthService])
 ], RegisterComponent);
 exports.RegisterComponent = RegisterComponent;
 function matchingFields(field1, field2) {
