@@ -50,6 +50,10 @@ var AuthService = (function () {
             _this.router.navigate(['/']);
         });
     };
+    AuthService.prototype.logout = function () {
+        localStorage.removeItem(this.TOKEN_KEY);
+        localStorage.removeItem(this.NAME_KEY);
+    };
     return AuthService;
 }());
 AuthService = __decorate([
