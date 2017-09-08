@@ -34,25 +34,44 @@ var AuthService = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(AuthService.prototype, "tokenHeader", {
+        get: function () {
+            var header = new http_1.Headers({ 'Authorization': 'Bearer ' + localStorage.getItem(this.TOKEN_KEY) });
+            return new http_1.RequestOptions({ headers: header });
+        },
+        enumerable: true,
+        configurable: true
+    });
+    AuthService.prototype.login = function (loginData) {
+        var _this = this;
+        // console.log(loginData); //test the data
+        this.http.post(this.BASE_URL + '/login', loginData).subscribe(function (res) {
+            console.log(res.json());
+            _this.authenticate(res);
+        });
+    };
     AuthService.prototype.register = function (user) {
         var _this = this;
         delete user.confirmPassword;
         this.http.post(this.BASE_URL + '/register', user).subscribe(function (res) {
             // console.log(res.json());
-            var authResponse = res.json();
-            if (!authResponse.token) {
-                return;
-            }
-            // Store the token in local storage
-            localStorage.setItem(_this.TOKEN_KEY, authResponse.token);
-            localStorage.setItem(_this.NAME_KEY, authResponse.firstName);
-            //redirect
-            _this.router.navigate(['/']);
+            _this.authenticate(res);
         });
     };
     AuthService.prototype.logout = function () {
         localStorage.removeItem(this.TOKEN_KEY);
         localStorage.removeItem(this.NAME_KEY);
+    };
+    AuthService.prototype.authenticate = function (res) {
+        var authResponse = res.json();
+        if (!authResponse.token) {
+            return;
+        }
+        // Store the token in local storage
+        localStorage.setItem(this.TOKEN_KEY, authResponse.token);
+        localStorage.setItem(this.NAME_KEY, authResponse.firstName);
+        //redirect
+        this.router.navigate(['/']);
     };
     return AuthService;
 }());

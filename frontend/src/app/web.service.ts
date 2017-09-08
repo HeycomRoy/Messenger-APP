@@ -3,6 +3,7 @@ import 'rxjs/add/operator/toPromise';
 import { Subject} from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 import { MdSnackBar} from '@angular/material';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class WebService {
@@ -15,8 +16,8 @@ export class WebService {
 
   messages = this.messageSubject.asObservable();
 
-  constructor(private http: Http, private sb: MdSnackBar) {
-      this.getMessages();
+  constructor(private http: Http, private sb: MdSnackBar, private auth: AuthService) {
+      this.getMessages('');
   }
 
   getMessages(user) {
@@ -39,6 +40,14 @@ export class WebService {
         this.handleError('Unable to post a new message!!');
     }
 
+  }
+
+  getUser() {
+      return this.http.get(this.BASE_URL + '/users/me', this.auth.tokenHeader).map(res => res.json());
+  }
+
+  saveUser(userData) {
+    return this.http.post(this.BASE_URL + '/users/me', userData, this.auth.tokenHeader).map(res => res.json());
   }
 
   //error handling function
