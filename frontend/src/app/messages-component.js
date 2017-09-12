@@ -19,6 +19,7 @@ var MessagesComponent = (function () {
     MessagesComponent.prototype.ngOnInit = function () {
         var name = this.route.snapshot.params.name;
         this.webService.getMessages(name);
+        this.webService.getUser().subscribe();
     };
     return MessagesComponent;
 }());

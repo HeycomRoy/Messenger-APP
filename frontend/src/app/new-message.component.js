@@ -11,12 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 // import { Component, Output, EventEmitter } from '@angular/core';     //******* with out the viewChild
 var core_1 = require("@angular/core");
 var web_service_1 = require("./web.service");
+var auth_service_1 = require("./auth.service");
 var NewMessageComponent = (function () {
     // @Output() onPosted = new EventEmitter();    //******* with out the viewChild
-    function NewMessageComponent(webService) {
+    function NewMessageComponent(webService, auth) {
         this.webService = webService;
+        this.auth = auth;
         this.message = {
-            owner: "",
+            owner: this.auth.name,
             text: ""
         };
     }
@@ -30,9 +32,9 @@ var NewMessageComponent = (function () {
 NewMessageComponent = __decorate([
     core_1.Component({
         selector: 'new-message',
-        template: "\n      <md-card class=\"card\">\n          <md-card-content>\n              <md-input-container>\n                  <!--two way bundling [(ngModel)] also need to import in app.module.ts-->\n                  <input [(ngModel)]=\"message.owner\" mdInput placeholder=\"Name\"/>\n              </md-input-container>\n              <md-input-container>\n                  <textarea [(ngModel)]=\"message.text\" mdInput placeholder=\"Message\"></textarea>\n              </md-input-container>\n              <md-card-actions>\n                  <button (click)=\"post()\" md-button color=\"primary\">POST</button>\n              </md-card-actions>\n          </md-card-content>\n      </md-card>\n  "
+        template: "\n      <md-card class=\"card\">\n          <md-card-content>\n              <!--<md-input-container>-->\n                  <!--&lt;!&ndash;two way bundling [(ngModel)] also need to import in app.module.ts&ndash;&gt;-->\n                  <!--<input [(ngModel)]=\"message.owner\" mdInput placeholder=\"Name\"/>-->\n              <!--</md-input-container>-->\n              <md-input-container>\n                  <textarea [(ngModel)]=\"message.text\" mdInput placeholder=\"Message\"></textarea>\n              </md-input-container>\n              <md-card-actions>\n                  <button (click)=\"post()\" md-button color=\"primary\">POST</button>\n              </md-card-actions>\n          </md-card-content>\n      </md-card>\n  "
     }),
-    __metadata("design:paramtypes", [web_service_1.WebService])
+    __metadata("design:paramtypes", [web_service_1.WebService, auth_service_1.AuthService])
 ], NewMessageComponent);
 exports.NewMessageComponent = NewMessageComponent;
 //# sourceMappingURL=new-message.component.js.map

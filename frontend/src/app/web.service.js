@@ -48,15 +48,17 @@ require("rxjs/add/operator/toPromise");
 var Rx_1 = require("rxjs/Rx");
 var core_1 = require("@angular/core");
 var material_1 = require("@angular/material");
+var auth_service_1 = require("./auth.service");
 var WebService = (function () {
-    function WebService(http, sb) {
+    function WebService(http, sb, auth) {
         this.http = http;
         this.sb = sb;
+        this.auth = auth;
         this.BASE_URL = 'http://localhost:8180/api';
         this.messageStore = [];
         this.messageSubject = new Rx_1.Subject();
         this.messages = this.messageSubject.asObservable();
-        this.getMessages();
+        this.getMessages('');
     }
     WebService.prototype.getMessages = function (user) {
         var _this = this;
@@ -90,6 +92,12 @@ var WebService = (function () {
             });
         });
     };
+    WebService.prototype.getUser = function () {
+        return this.http.get(this.BASE_URL + '/users/me', this.auth.tokenHeader).map(function (res) { return res.json(); });
+    };
+    WebService.prototype.saveUser = function (userData) {
+        return this.http.post(this.BASE_URL + '/users/me', userData, this.auth.tokenHeader).map(function (res) { return res.json(); });
+    };
     //error handling function
     WebService.prototype.handleError = function (error) {
         console.log(error);
@@ -99,7 +107,7 @@ var WebService = (function () {
 }());
 WebService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http, material_1.MdSnackBar])
+    __metadata("design:paramtypes", [http_1.Http, material_1.MdSnackBar, auth_service_1.AuthService])
 ], WebService);
 exports.WebService = WebService;
 //# sourceMappingURL=web.service.js.map
